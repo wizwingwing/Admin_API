@@ -1,9 +1,8 @@
 const router = require('express').Router()
-const { query } = require('express')
 const verify = require('../middleware/verify')
 
-router.get('/', (req,res) =>{
-    console.log(req,query)
+router.get('/',verify, async (req,res) =>{
+    console.log(1)
     res.json({personal:'Employee New'})
 })
 
